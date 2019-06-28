@@ -18,9 +18,9 @@ export class App extends Component {
         this.props.fetchEarthquakes();
     }
 
-    filteredMag = async e => {
+    filteredMag = e => {
         e.preventDefault();
-        let filteredData = await this.props.earthquakes.filter(
+        let filteredData = this.props.earthquakes.filter(
          earthquake => {
            return earthquake.properties.mag
            .toString()
@@ -30,9 +30,9 @@ export class App extends Component {
      return this.setState({data:filteredData});
      }
 
-    filteredMagType = async e => {
+    filteredMagType = e => {
         e.preventDefault();
-        let filteredData = await this.props.earthquakes.filter(
+        let filteredData = this.props.earthquakes.filter(
              earthquake => {
                  return earthquake.properties.magType
                  .toLowerCase()
